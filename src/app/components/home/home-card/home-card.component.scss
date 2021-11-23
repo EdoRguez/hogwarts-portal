@@ -1,0 +1,19 @@
+.custom-card-style {
+  width: 18rem;
+  padding: 5px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  animation: fadeIn; 
+  animation-duration: 4s;
+}
+
+.custom-card-style:hover {
+  cursor: pointer;
+  transition: .7s;
+  transform: scale(1.05);
+}
+
+.main-card-image {
+  border: 1px solid black;
+  padding: 5px;
+}

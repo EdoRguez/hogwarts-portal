@@ -1,0 +1,18 @@
+.page-navbar {
+    background: black;
+}
+
+.nav-icon {
+    max-width: 30px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 990px) {
+    .display-nav-block {
+        display: block;
+    }
+
+    .display-nav-none {
+        display: none;
+    }
+}

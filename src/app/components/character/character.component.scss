@@ -1,0 +1,15 @@
+.character-title {
+    text-align: center;
+    animation: slideInDown;
+    animation-duration: 1.5s;
+}
+
+.box-table {
+    animation: slideInRight;
+    animation-duration: 1.5s;
+}
+
+.box-list {
+    animation: slideInLeft;
+    animation-duration: 1.5s;
+}

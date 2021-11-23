@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row mt-4">
+      <div class="col-12">
+          <h1 class="character-title">CHARACTERS</h1>
+      </div>  
+    </div>
+    <div class="row my-4">
+        <div class="col-12 box-list">
+            <app-character-filter-list (selectHouseClick)="onSelectHouse($event)"></app-character-filter-list>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12 box-table">
+            <app-character-table [listCharacters]="characters"></app-character-table>
+        </div>
+    </div>
+</div>
