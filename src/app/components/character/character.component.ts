@@ -9,27 +9,31 @@ import { CharacterService } from './services/character.service';
 })
 export class CharacterComponent implements OnInit {
 
+  isLoading: boolean = false;
   characters: Character[] = [];
 
   constructor(private characterService: CharacterService) { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
 
   onSelectHouse(value: string): void {
+    this.isLoading = true;
+
     if(value) {
       this.characterService.getByHouseName(value).subscribe(
         (res: Character[]) => {
           this.characters = res;
+          this.isLoading = false;
         },
         err => {
           console.log('error');
           console.log(err);
+          this.isLoading = false;
         }
       );
     } else {
       this.characters = [];
+      this.isLoading = false;
     }
   }
 

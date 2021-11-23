@@ -4,16 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './components/shared/modules/material.module';
 import { FormsModule } from '@angular/forms';
 import { HomeModule } from './components/home/home.module';
-import { NavbarModule } from './components/shared/navbar/navbar.module';
+import { NavbarModule } from './components/shared/components/navbar/navbar.module';
 import { CharacterModule } from './components/character/character.module';
 import { HttpClientModule } from '@angular/common/http';
+import { TeacherModule } from './components/teacher/teacher.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeModule,
     NavbarModule,
     CharacterModule,
-    HttpClientModule
+    HttpClientModule,
+    TeacherModule
   ],
   providers: [],
   bootstrap: [AppComponent]

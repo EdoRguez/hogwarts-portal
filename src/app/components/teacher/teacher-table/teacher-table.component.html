@@ -36,12 +36,12 @@
       <td mat-cell *matCellDef="let row" class="p-2">
         <img
           *ngIf="row.image"
-          class="img-fluid character-image"
+          class="img-fluid teacher-image"
           [src]="row.image"
         />
         <img
           *ngIf="!row.image"
-          class="img-fluid character-image"
+          class="img-fluid teacher-image"
           src="assets/images/no-image.png"
         />
       </td>

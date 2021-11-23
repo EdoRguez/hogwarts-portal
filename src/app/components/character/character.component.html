@@ -10,7 +10,8 @@
         </div>
     </div>
     <hr>
-    <div class="row">
+    <app-loader *ngIf="isLoading"></app-loader>
+    <div class="row" *ngIf="!isLoading">
         <div class="col-12 box-table">
             <app-character-table [listCharacters]="characters"></app-character-table>
         </div>
