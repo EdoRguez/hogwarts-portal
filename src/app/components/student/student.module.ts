@@ -7,15 +7,19 @@ import { GlobalPipesModule } from '../shared/modules/global-pipes.module';
 import { StudentTableComponent } from './student-table/student-table.component';
 import { LoaderModule } from '../shared/components/loader/loader.module';
 import { MaterialModule } from '../shared/modules/material.module';
+import { StudentApplicationComponent } from './student-application/student-application.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     StudentComponent,
-    StudentTableComponent
+    StudentTableComponent,
+    StudentApplicationComponent
   ],
   imports: [
     CommonModule,
+    RouterModule,
     StudentRoutingModule,
     MaterialModule,
     GlobalPipesModule,

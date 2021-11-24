@@ -3,13 +3,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   exports: [
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule { }
