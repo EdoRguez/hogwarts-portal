@@ -11,6 +11,7 @@ import { NavbarModule } from './components/shared/components/navbar/navbar.modul
 import { CharacterModule } from './components/character/character.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TeacherModule } from './components/teacher/teacher.module';
+import { StudentModule } from './components/student/student.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TeacherModule } from './components/teacher/teacher.module';
     NavbarModule,
     CharacterModule,
     HttpClientModule,
-    TeacherModule
+    TeacherModule,
+    StudentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

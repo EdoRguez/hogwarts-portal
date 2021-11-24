@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row mt-4">
+      <div class="col-12">
+          <h1 class="student-title">STUDENTS</h1>
+      </div>  
+    </div>
+    <hr>
+    <app-loader *ngIf="isLoading"></app-loader>
+    <div class="row" *ngIf="!isLoading">
+        <div class="col-12 box-table">
+            <app-student-table [listStudents]="students"></app-student-table>
+        </div>
+    </div>
+</div>
