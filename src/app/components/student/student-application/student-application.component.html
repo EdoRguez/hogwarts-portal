@@ -30,6 +30,8 @@
     <div class="col-12 box-table">
       <app-student-application-table
         [listStudents]="students"
+        (deleteStudentApplicationClick)="onDeleteStudent($event)"
+        (updateStudentApplicationClick)="onUpdateStudent($event)"
       ></app-student-application-table>
     </div>
   </div>

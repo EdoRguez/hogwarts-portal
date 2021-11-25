@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild, EventEmitter } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -12,6 +12,8 @@ import { Student } from '../../interfaces/student.interface';
 export class StudentApplicationTableComponent implements OnInit, AfterViewInit, OnChanges {
 
   @Input() listStudents: Student[] = [];
+  @Output() deleteStudentApplicationClick = new EventEmitter<Student>();
+  @Output() updateStudentApplicationClick = new EventEmitter<Student>();
   
   displayedColumns: string[] = ['name', 'patronus', 'age', 'image', 'edit', 'delete'];
 
@@ -42,9 +44,6 @@ export class StudentApplicationTableComponent implements OnInit, AfterViewInit, 
   }
 
   applyFilter(filterValue: string): void {
-    // const filterValue = (event.target as HTMLInputElement).value;
-    // this.dataSource.filter = filterValue.trim().toLowerCase();
-    
     filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
@@ -63,12 +62,12 @@ export class StudentApplicationTableComponent implements OnInit, AfterViewInit, 
     this.dataSource.sort = this.sort;
   }
 
-  onDeleteStudentApplication(student: Student) {
-    console.log(student);
+  onDeleteStudentApplication(student: Student): void {
+    this.deleteStudentApplicationClick.next(student);
   }
 
-  onEditStudentApplication(student: Student) {
-    console.log(student);
+  onEditStudentApplication(student: Student): void {
+    this.updateStudentApplicationClick.next(student);
   }
 
 }

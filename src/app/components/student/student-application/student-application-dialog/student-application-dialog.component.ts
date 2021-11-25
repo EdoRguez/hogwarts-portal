@@ -19,9 +19,16 @@ export class StudentApplicationDialogComponent implements OnInit {
     image: new FormControl(null, [Validators.required])
   });
 
-  constructor(public dialogRef: MatDialogRef<StudentApplicationDialogComponent>) { }
+  isUpdate: boolean = false;
+
+  constructor(public dialogRef: MatDialogRef<StudentApplicationDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
+    if(this.data) {
+      this.form.setValue(this.data);
+      this.isUpdate = true;
+    }
   }
 
   onCancelForm(): void {
@@ -52,6 +59,8 @@ export class StudentApplicationDialogComponent implements OnInit {
     this.isFormSubmitted = true;
 
     if(this.form.valid) {
+
+
       this.dialogRef.close(this.form.value);
     }
   }

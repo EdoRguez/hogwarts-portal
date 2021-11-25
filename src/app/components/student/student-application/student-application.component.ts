@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Student } from '../interfaces/student.interface';
+import { StudentApplicationService } from '../services/student-application.service';
 import { StudentApplicationDialogComponent } from './student-application-dialog/student-application-dialog.component';
 
 @Component({
@@ -11,44 +12,43 @@ import { StudentApplicationDialogComponent } from './student-application-dialog/
 export class StudentApplicationComponent implements OnInit {
   students: Student[] = [];
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,
+              private studentApplicationService: StudentApplicationService) {}
 
   ngOnInit(): void {
-    let dbUsers = localStorage.getItem('dbUsers');
-    if (dbUsers) {
-      this.students = JSON.parse(dbUsers);
-    }
+    this.students = this.studentApplicationService.getAll();
   }
 
   onApplyStudent(): void {
     this.openDialog();
   }
 
-  private openDialog(): void {
+  onDeleteStudent(student: Student): void {
+    this.studentApplicationService.delete(student);
+    this.students = this.studentApplicationService.getAll();
+  }
+
+  onUpdateStudent(student: Student): void {
+    this.openDialog(student);
+  }
+
+  private openDialog(student?: Student): void {
     const dialogRef = this.dialog.open(StudentApplicationDialogComponent, {
       width: '450px',
+      data: student
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        let dbUsers = localStorage.getItem('dbUsers');
+        if(dialogRef.componentInstance.isUpdate) {
+          const oldStudent = dialogRef.componentInstance.data;
 
-        if (dbUsers) {
-          let currentUsers = JSON.parse(dbUsers);
-          currentUsers.push(result);
-
-          this.students = currentUsers;
-
-          let newUsers = JSON.stringify(currentUsers);
-          localStorage.setItem('dbUsers', newUsers);
+          this.studentApplicationService.update(oldStudent, result);
         } else {
-          let currentUsers = [result];
-
-          this.students = currentUsers;
-
-          let newUsers = JSON.stringify(currentUsers);
-          localStorage.setItem('dbUsers', newUsers);
+          this.studentApplicationService.create(result);
         }
+
+        this.students = this.studentApplicationService.getAll();
       }
     });
   }
