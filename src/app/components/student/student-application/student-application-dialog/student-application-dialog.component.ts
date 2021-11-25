@@ -13,6 +13,7 @@ export class StudentApplicationDialogComponent implements OnInit {
   uploadedImageName!: string;
 
   form: FormGroup =  new FormGroup({
+    id: new FormControl(null),
     name: new FormControl(null, [Validators.required, Validators.maxLength(20), Validators.pattern('^[a-zA-Z ]*$')]),
     patronus: new FormControl(null, [Validators.required, Validators.maxLength(20), Validators.pattern('^[a-zA-Z ]*$')]),
     age: new FormControl(null, [Validators.required, Validators.maxLength(2), Validators.pattern('^[0-9]*$'), Validators.min(18), Validators.max(60)]),
@@ -59,10 +60,14 @@ export class StudentApplicationDialogComponent implements OnInit {
     this.isFormSubmitted = true;
 
     if(this.form.valid) {
-
-
+      this.formatFormValues();
       this.dialogRef.close(this.form.value);
     }
+  }
+
+  private formatFormValues(): void {
+    this.form.controls['name'].setValue(this.form.controls['name'].value.trim());
+    this.form.controls['patronus'].setValue(this.form.controls['patronus'].value.trim());
   }
 
 }

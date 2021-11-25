@@ -24,7 +24,7 @@ export class StudentApplicationComponent implements OnInit {
   }
 
   onDeleteStudent(student: Student): void {
-    this.studentApplicationService.delete(student);
+    this.studentApplicationService.delete(student.id);
     this.students = this.studentApplicationService.getAll();
   }
 
@@ -42,8 +42,7 @@ export class StudentApplicationComponent implements OnInit {
       if (result) {
         if(dialogRef.componentInstance.isUpdate) {
           const oldStudent = dialogRef.componentInstance.data;
-
-          this.studentApplicationService.update(oldStudent, result);
+          this.studentApplicationService.update(oldStudent.id, result);
         } else {
           this.studentApplicationService.create(result);
         }
