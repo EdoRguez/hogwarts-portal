@@ -1,23 +1,23 @@
 <div class="container">
-    <div class="row mt-4">
-      <div class="col-12">
-          <h1 class="student-title">STUDENTS</h1>
-      </div>  
+  <div class="row mt-4">
+    <div class="col-12">
+      <h1 class="student-title">STUDENTS</h1>
     </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <h5>Would you like to apply to by a student?</h5>
-            <button class="btn btn-primary">
-                <a [routerLink]="['applications']">Apply</a>
-            </button>
-        </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-12">
+      <h5>Would you like to apply to by a student?</h5>
+      <button class="btn btn-danger" [routerLink]="['applications']">
+        Apply
+      </button>
     </div>
-    <hr>
-    <app-loader *ngIf="isLoading"></app-loader>
-    <div class="row mb-4" *ngIf="!isLoading">
-        <div class="col-12 box-table">
-            <app-student-table [listStudents]="students"></app-student-table>
-        </div>
+  </div>
+  <hr />
+  <app-loader *ngIf="isLoading"></app-loader>
+  <div class="row mb-4" *ngIf="!isLoading">
+    <div class="col-12 box-table">
+      <app-student-table [listStudents]="students"></app-student-table>
     </div>
+  </div>
 </div>
