@@ -31,7 +31,7 @@ Los siguientes pasos deben de llevarse a cabo para poder utilizar el proyecto.
 npm install
 ```
 
-3. En el CMD ingresar el siguiente comando para iniciar al proyecto.
+4. En el CMD ingresar el siguiente comando para iniciar al proyecto.
 
 ```
 ng s -o
