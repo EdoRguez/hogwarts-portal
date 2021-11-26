@@ -25,7 +25,13 @@ Los siguientes pasos deben de llevarse a cabo para poder utilizar el proyecto.
 
 2. Abrir el CMD.
 
-3. Ingresar a la ruta principal donde está descargado el proyecto a través del CMD y colocar el siguiente comando.
+3. Ingresar a la ruta principal donde está descargado el proyecto a través del CMD y colocar el siguiente comando para restaurar todos los paquetes instalados.
+
+```
+npm install
+```
+
+3. En el CMD ingresar el siguiente comando para iniciar al proyecto.
 
 ```
 ng s -o
