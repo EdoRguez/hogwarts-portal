@@ -1,27 +1,44 @@
-# HogwartsPortal
+# Hogwarts Portal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+La escuela de Hechicería y brujería Hogwarts necesita desplegar su portal institucional, inicialmente el requerimiento es poder catalogar a todas las personas influyentes de su escuela por tal motivo requieren un portafolio con las siguientes secciones.
 
-## Development server
+## Comenzando 🚀
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 
-## Code scaffolding
+Adicionalmente el repositorio contiene un archivo PDF **(Hogwarts Portal Documentation.pdf)** el cual contiene documentación acerca de como comenzar a interactuar con la plataforma.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Pre-requisitos 📋
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Que cosas necesitas para su instalación
 
-## Running unit tests
+```
+- Angular 13
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Instalación 🔧
 
-## Running end-to-end tests
+Los siguientes pasos deben de llevarse a cabo para poder utilizar el proyecto.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Descargar o clonar el repositorio.
 
-## Further help
+2. Abrir el CMD.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Ingresar a la ruta principal donde está descargado el proyecto a través del CMD y colocar el siguiente comando.
+
+```
+ng s -o
+```
+
+
+## Construido con 🛠️
+
+* [Angular 13](https://angular.io/) - Framework utilizado
+* [Visual Studio Code](https://code.visualstudio.com/) - Editor de texto
+
+
+## Autores ✒️
+
+* **Eduardo Rodríguez** - *Autor* - [edorguez](https://github.com/edorguez)
+
